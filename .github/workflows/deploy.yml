@@ -31,9 +31,16 @@ jobs:
         run: npm ci
 
       - name: Compilar sitio estático
-        run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+        # nahuerosso.github.io es un sitio de usuario: se sirve en la raíz,
+        # así que no lleva basePath. Solo los repos de proyecto lo necesitan.
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          if [[ "$REPO" == *.github.io ]]; then
+            export NEXT_PUBLIC_BASE_PATH=""
+          else
+            export NEXT_PUBLIC_BASE_PATH="/$REPO"
+          fi
+          npm run build
 
       - name: Configurar Pages
         uses: actions/configure-pages@v5
