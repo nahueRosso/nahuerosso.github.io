@@ -16,3 +16,4 @@ node_modules
 .DS_Store
 # Build estático (lo genera el workflow)
 out/
+next-env.d.ts
