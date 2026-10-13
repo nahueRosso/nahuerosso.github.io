@@ -2,6 +2,26 @@ import { Section } from '@/components/section'
 import { SectionHeading } from '@/components/section-heading'
 import { turnkey } from '@/lib/content'
 
+function ArgentinaFlag() {
+  return (
+    <svg
+      viewBox="0 0 90 60"
+      role="img"
+      aria-label="Bandera de Argentina"
+      className="h-10 w-auto rounded-md ring-2 ring-primary-foreground"
+    >
+      <rect width="90" height="60" fill="#74ACDF" />
+      <rect y="20" width="90" height="20" fill="#FFFFFF" />
+      <g transform="translate(45 30)" fill="#F6B40E">
+        {Array.from({ length: 16 }, (_, i) => (
+          <rect key={i} x="-0.8" y="-9" width="1.6" height="4" transform={`rotate(${i * 22.5})`} />
+        ))}
+        <circle r="5" stroke="#85340A" strokeWidth="0.6" />
+      </g>
+    </svg>
+  )
+}
+
 export function Turnkey() {
   const LocalIcon = turnkey.local.icon
 
@@ -28,7 +48,10 @@ export function Turnkey() {
         </ul>
 
         <div className="flex flex-col justify-between rounded-3xl bg-primary p-8 text-primary-foreground md:p-10">
-          <LocalIcon className="size-10" aria-hidden="true" />
+          <div className="flex items-center gap-4">
+            <LocalIcon className="size-10" aria-hidden="true" />
+            <ArgentinaFlag />
+          </div>
           <div className="mt-10">
             <h3 className="text-2xl leading-snug font-extrabold md:text-3xl">
               {turnkey.local.title}

@@ -12,9 +12,6 @@ export function Footer() {
           <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
             {footer.tagline}
           </p>
-          <p className="mt-2 max-w-md text-base leading-relaxed text-muted-foreground">
-            {footer.university}
-          </p>
         </div>
 
         <nav aria-label="Secciones del sitio">
