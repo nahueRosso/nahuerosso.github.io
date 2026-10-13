@@ -15,7 +15,7 @@ export function Comparison() {
 
       {/* Tabla en pantallas medianas y grandes */}
       <div className="mt-12 hidden overflow-x-auto md:block">
-        <table className="w-full min-w-176 border-separate border-spacing-0 text-left">
+        <table className="w-full min-w-140 border-separate border-spacing-0 text-left">
           <caption className="sr-only">{comparison.caption}</caption>
           <thead>
             <tr>
@@ -106,6 +106,24 @@ export function Comparison() {
           </article>
         ))}
       </div>
+
+      <AllianceCard />
     </Section>
+  )
+}
+
+function AllianceCard() {
+  const { icon: Icon, tag, title, text } = comparison.alliance
+  return (
+    <article className="mt-10 flex flex-col gap-6 rounded-3xl border-2 border-dashed border-brand-soft bg-background p-8 md:flex-row md:items-start md:p-10">
+      <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+        <Icon className="size-7" aria-hidden="true" />
+      </span>
+      <div>
+        <p className="text-sm font-bold tracking-wide text-brand-soft uppercase">{tag}</p>
+        <h3 className="mt-2 text-2xl font-extrabold md:text-3xl">{title}</h3>
+        <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted-foreground">{text}</p>
+      </div>
+    </article>
   )
 }

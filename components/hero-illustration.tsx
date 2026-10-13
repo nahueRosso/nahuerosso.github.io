@@ -28,7 +28,7 @@ export function HeroIllustration() {
     <svg
       viewBox="0 0 560 420"
       role="img"
-      aria-label="Ilustración: ondas de sonido llegan a un chaleco y se convierten en pulsos de vibración sobre el pecho y el abdomen."
+      aria-label="Ilustración: ondas de sonido llegan a un chaleco y se convierten en pulsos de vibración en cuatro módulos sobre el pecho y el abdomen."
       className="h-auto w-full"
     >
       <defs>
@@ -63,9 +63,10 @@ export function HeroIllustration() {
 
       <g transform="translate(250 14) scale(1.5)">
         <VestBody view="front" />
-        <MotorDot x={66} y={88} delay={0} ringRadius={26} />
-        <MotorDot x={134} y={88} delay={0.4} ringRadius={26} />
-        <MotorDot x={100} y={178} delay={0.8} ringRadius={26} />
+        <MotorDot x={66} y={88} delay={0} ringRadius={24} />
+        <MotorDot x={134} y={88} delay={0.4} ringRadius={24} />
+        <MotorDot x={68} y={176} delay={0.8} ringRadius={24} />
+        <MotorDot x={132} y={176} delay={1.2} ringRadius={24} />
       </g>
     </svg>
   )

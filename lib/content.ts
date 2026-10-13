@@ -1,11 +1,16 @@
 import {
   AudioLines,
+  BadgeCheck,
   Building2,
+  DoorOpen,
   Ear,
   Factory,
   Headset,
+  Handshake,
   HeartHandshake,
+  KeyRound,
   Mic,
+  PiggyBank,
   Radio,
   SlidersHorizontal,
   SprayCan,
@@ -31,22 +36,22 @@ export const navLinks = [
   { id: 'como-funciona', label: 'Cómo funciona' },
   { id: 'para-quien', label: 'Para quién' },
   { id: 'servicio', label: 'Servicio' },
-  { id: 'comparativa', label: 'Comparativa' },
-  { id: 'hoja-de-ruta', label: 'Hoja de ruta' },
+  { id: 'comparativa', label: 'Diferencial' },
+  { id: 'hoja-de-ruta', label: 'Objetivos' },
   { id: 'nosotros', label: 'Nosotros' },
   { id: 'equipo', label: 'Equipo' },
 ] as const
 
-export const ctaLabel = 'Contratar para mi evento'
+export const ctaLabel = 'Contactanos'
 
 /* ---------- Hero ---------- */
 
 export const hero = {
   eyebrow: 'Chalecos hápticos para espectáculos en vivo',
-  titleLine1: 'Sentí la música.',
-  titleLine2: 'Todo el público, en vivo.',
+  titleLine1: 'Sentí la música en vivo.',
+  titleLine2: 'Que nadie se quede afuera.',
   subtitle:
-    'Nuestros chalecos hápticos traducen el sonido del show en vibraciones sobre el cuerpo. Así, las personas sordas e hipoacúsicas también viven el recital.',
+    'Nuestros chalecos hápticos traducen el sonido del espectáculo en vibraciones sobre el cuerpo. Así, las personas sordas e hipoacúsicas también viven la música en la sala.',
   primaryCta: ctaLabel,
   secondaryCta: 'Mirá cómo funciona',
   highlights: [
@@ -60,24 +65,24 @@ export const hero = {
 
 export const problem = {
   eyebrow: 'La problemática',
-  title: 'Los recitales dejan afuera a muchas personas',
+  title: 'La música en vivo deja afuera a muchas personas',
   lead: 'Las personas sordas e hipoacúsicas quedan excluidas de los espectáculos de música en vivo.',
   stat: {
     value: '20,8%',
     text: 'de las discapacidades en Argentina son auditivas.',
     source: 'Fuente: INDEC, 2018',
   },
-  itemsTitle: 'Las soluciones de hoy no alcanzan',
+  itemsTitle: 'Lo que existe hoy, y lo que sumamos',
   items: [
     {
       icon: Ear,
       title: 'Aro magnético',
-      text: 'Solo sirve a quien usa audífonos o implantes. Quien no los usa queda afuera.',
+      text: 'Acerca el sonido a quienes usan audífonos o implantes. El chaleco suma el tacto, para que también vivan la música quienes no los usan.',
     },
     {
       icon: HeartHandshake,
       title: 'Intérpretes de lengua de señas',
-      text: 'Son un apoyo valioso, pero no transmiten la experiencia musical.',
+      text: 'Hacen accesibles la palabra y la letra. El chaleco suma la vibración de la música.',
     },
   ],
 } as const
@@ -107,7 +112,7 @@ export const howItWorks = {
     {
       icon: Vibrate,
       title: 'El cuerpo siente la música',
-      text: '6 motores hápticos (ERM y LRA) vibran sobre el torso. Latencia objetivo ≤ 15 ms.',
+      text: '6 motores hápticos (ERM y LRA) vibran sobre el torso: 4 adelante y 2 atrás. Latencia objetivo ≤ 15 ms.',
     },
   ],
 } as const
@@ -115,10 +120,10 @@ export const howItWorks = {
 export type MotorId =
   | 'pecho-izq'
   | 'pecho-der'
-  | 'abdomen'
+  | 'abdomen-izq'
+  | 'abdomen-der'
   | 'espalda-izq'
   | 'espalda-der'
-  | 'lumbar'
 
 export interface Motor {
   id: MotorId
@@ -138,7 +143,7 @@ export const vestDiagram = {
   backLabel: 'Vista trasera',
   listLabel: 'Zonas de vibración',
   idleTitle: 'Elegí una zona',
-  idleText: 'Cada chaleco tiene 6 motores hápticos: 2 pectorales, 2 dorsales, 1 lumbar y 1 abdominal.',
+  idleText: 'Cada chaleco tiene 6 módulos hápticos: 4 adelante (2 pectorales y 2 abdominales) y 2 atrás (dorsales).',
   /* En la vista frontal, la izquierda de quien lo usa queda a la derecha del dibujo. */
   motors: [
     {
@@ -160,40 +165,40 @@ export const vestDiagram = {
       y: 88,
     },
     {
-      id: 'abdomen',
+      id: 'abdomen-izq',
       view: 'front',
-      label: 'Abdominal',
-      zone: 'Abdomen',
-      description: 'Vibra en el centro del abdomen, por debajo del pecho.',
-      x: 100,
-      y: 178,
+      label: 'Abdominal izquierdo',
+      zone: 'Abdomen, lado izquierdo',
+      description: 'Vibra sobre el abdomen, del lado izquierdo, por debajo del pecho.',
+      x: 132,
+      y: 176,
+    },
+    {
+      id: 'abdomen-der',
+      view: 'front',
+      label: 'Abdominal derecho',
+      zone: 'Abdomen, lado derecho',
+      description: 'Vibra sobre el abdomen, del lado derecho, por debajo del pecho.',
+      x: 68,
+      y: 176,
     },
     {
       id: 'espalda-izq',
       view: 'back',
       label: 'Dorsal izquierdo',
-      zone: 'Espalda alta, lado izquierdo',
-      description: 'Vibra sobre la espalda alta, del lado izquierdo.',
+      zone: 'Espalda, lado izquierdo',
+      description: 'Vibra sobre la espalda, del lado izquierdo.',
       x: 66,
-      y: 92,
+      y: 120,
     },
     {
       id: 'espalda-der',
       view: 'back',
       label: 'Dorsal derecho',
-      zone: 'Espalda alta, lado derecho',
-      description: 'Vibra sobre la espalda alta, del lado derecho.',
+      zone: 'Espalda, lado derecho',
+      description: 'Vibra sobre la espalda, del lado derecho.',
       x: 134,
-      y: 92,
-    },
-    {
-      id: 'lumbar',
-      view: 'back',
-      label: 'Lumbar',
-      zone: 'Zona baja de la espalda',
-      description: 'Vibra sobre la zona lumbar, en el centro de la espalda baja.',
-      x: 100,
-      y: 184,
+      y: 120,
     },
   ] satisfies Motor[],
 }
@@ -206,27 +211,47 @@ export const audience = {
   cards: [
     {
       icon: Building2,
-      tag: 'Clientes',
-      title: 'Productoras, festivales, teatros y recintos',
-      text: 'Alquilás el servicio y ofrecés una experiencia que pocos eventos tienen.',
-      points: [
-        'Te diferenciás de otros eventos.',
-        'Mejorás tu imagen inclusiva.',
-        'Sumás a tu presupuesto ESG / RSE.',
-        'Sponsors pueden financiar la “Zona Inclusiva”.',
-        'Vas en línea con el espíritu de la Ley 3.546 de CABA.',
+      tag: 'Cliente',
+      title: 'Recintos y espacios culturales de mediana escala',
+      paragraphs: [
+        'En nuestro modelo de negocios, el cliente objetivo está conformado por los administradores y directores de recintos y espacios culturales de mediana escala. Este grupo corporativo e institucional pertenece al sector de las industrias culturales del Área Metropolitana de Buenos Aires (AMBA), abarcando modelos de gestión tanto privada como estatal.',
+        'A nivel cuantitativo, este nicho específico agrupa a un total de 88 recintos identificados en CABA que cuentan con una capacidad operativa idónea para nuestra flota inicial, oscilando entre los 500 y 2.500 espectadores (según el padrón de espacios culturales del GCBA).',
+        'El perfil general de este cliente se define por un fuerte compromiso con la responsabilidad social, la innovación y la búsqueda de nuevos públicos, buscando integrar la vanguardia tecnológica y la accesibilidad a su oferta cultural sin incurrir en altos riesgos de inversión inicial.',
       ],
     },
     {
       icon: UserCheck,
       tag: 'Usuarios',
       title: 'Personas con hipoacusia leve hasta sordera profunda',
-      text: 'El chaleco se adapta a cada forma de escuchar.',
+      paragraphs: ['El chaleco se adapta a cada forma de escuchar.'],
       points: [
         'Para quienes usan audífonos o implantes, es un complemento.',
         'Para la sordera profunda, es la interfaz sensorial principal.',
         'Se vive el show junto al resto del público.',
       ],
+    },
+  ],
+  benefitsTitle: 'Beneficios para el cliente',
+  benefits: [
+    {
+      icon: PiggyBank,
+      title: 'Inclusión sin inversión inicial',
+      text: 'Contratás el servicio como un gasto operativo, sin comprar ni mantener la tecnología.',
+    },
+    {
+      icon: KeyRound,
+      title: 'Servicio 100% “llave en mano”',
+      text: 'Llevamos, colocamos, operamos y sanitizamos los chalecos en cada función.',
+    },
+    {
+      icon: DoorOpen,
+      title: 'Abrí tus puertas a un nuevo público',
+      text: 'Personas sordas e hipoacúsicas pueden vivir la música en tu sala, junto al resto del público.',
+    },
+    {
+      icon: BadgeCheck,
+      title: 'Prestigio y cumplimiento normativo',
+      text: 'Reforzás tu compromiso con la accesibilidad y la innovación, en línea con la Ley 3.546 de CABA.',
     },
   ],
 } as const
@@ -269,70 +294,81 @@ export const turnkey = {
 /* ---------- Comparativa ---------- */
 
 export const comparison = {
-  eyebrow: 'Comparativa',
-  title: 'Cómo nos comparamos',
-  lead: 'Tres formas de acercar la música a personas sordas e hipoacúsicas.',
-  caption: 'Comparación entre Sensonoro, equipos importados e intérprete de señas o aro magnético',
+  eyebrow: 'Diferencial',
+  title: 'Qué nos diferencia',
+  lead: 'Contratar Sensonoro frente a comprar equipos hápticos importados.',
+  caption: 'Comparación entre el servicio de Sensonoro y la compra de equipos hápticos importados',
   rowHeader: 'Criterio',
   columns: [
     { id: 'sensonoro', name: 'Sensonoro', highlight: true },
     { id: 'importados', name: 'Equipos importados', note: 'tipo SubPac', highlight: false },
-    { id: 'senas', name: 'Intérprete de señas o aro magnético', highlight: false },
   ],
   rows: [
     {
-      criterion: 'Modelo de negocio',
-      values: [
-        'B2B llave en mano',
-        'Venta de equipos B2C / B2B',
-        'Por evento o instalación fija',
-      ],
+      criterion: 'Modelo',
+      values: ['Servicio llave en mano', 'Compra de equipos'],
+    },
+    {
+      criterion: 'Inversión inicial',
+      values: ['Ninguna: es un gasto operativo', 'Muy alta (en dólares)'],
     },
     {
       criterion: 'Calidad de inmersión',
-      values: ['Alta (3 bandas)', 'Alta', 'Nula inmersión musical'],
+      values: ['Alta (3 bandas, 6 módulos)', 'Alta'],
     },
     {
-      criterion: 'Barrera económica para el cliente',
-      values: ['Baja (financiable por sponsors)', 'Muy alta (en dólares)', 'Baja'],
+      criterion: 'Operación en sala',
+      values: ['Técnicos propios en cada función', 'Requiere capacitar personal'],
     },
     {
-      criterion: 'Implementación logística',
-      values: [
-        'Operado por técnicos propios in situ',
-        'Requiere capacitar personal',
-        'Requiere espacio exclusivo con visión al escenario',
-      ],
+      criterion: 'Mantenimiento',
+      values: ['Repuestos locales, reparación rápida', 'Repuestos importados'],
     },
   ],
+  alliance: {
+    icon: Handshake,
+    tag: 'Futura alianza',
+    title: 'Aro magnético + Sensonoro',
+    text: 'El aro magnético ya acerca el sonido a quienes usan audífonos o implantes. Buscamos trabajar junto a quienes lo instalan, para que en una misma sala cada persona elija cómo vivir el espectáculo: escuchando por el aro, sintiendo con el chaleco, o las dos cosas a la vez.',
+  },
 } as const
 
 /* ---------- Hoja de ruta ---------- */
 
 export const roadmap = {
-  eyebrow: 'Hoja de ruta',
+  eyebrow: 'Objetivos',
   title: 'Hacia dónde vamos',
-  lead: 'Cuatro hitos para llegar a más escenarios.',
+  lead: 'Nuestros objetivos a corto, mediano y largo plazo.',
   milestones: [
     {
-      date: 'Ene 2027',
-      title: 'Prototipo funcional',
-      text: 'Un prototipo con latencia ≤ 15 ms.',
+      term: 'Corto plazo',
+      date: '2027',
+      title: 'MVP y lote piloto de 50 chalecos',
+      paragraphs: [
+        'Desarrollar un Producto Mínimo Viable (MVP) funcional con una latencia de transmisión igual o menor a 15 ms para enero de 2027. Para julio de ese mismo año, se pretende fabricar un lote piloto de 50 chalecos para ejecutar pruebas Beta en dos recintos culturales del AMBA, donde se realizará una encuesta a los usuarios buscando una satisfacción de la experiencia mayor al 85%.',
+        'Esto será medible y alcanzable ya que contamos con los conocimientos en procesamiento digital de señales (DSP) y porque el lote de 50 unidades responde a la lógica comercial realista de cubrir el cupo de inclusión del 5% en un teatro estándar de 1.000 espectadores.',
+        'Será relevante ya que no podemos brindar un servicio definitivo sin validar empíricamente el hardware en un entorno de sala real antes de inyectar capital en una producción industrial a mayor escala.',
+      ],
     },
     {
-      date: 'Jul 2027',
-      title: '20 unidades en prueba',
-      text: 'Las probamos con clientes. Meta de satisfacción: más del 85%.',
+      term: 'Mediano plazo',
+      date: '2028',
+      title: '250 chalecos y 10 recintos con contrato',
+      paragraphs: [
+        'Alcanzar nuestra capacidad productiva inicial de 250 chalecos operativos y afianzar vínculos para concretar contratos recurrentes con al menos 10 teatros y centros culturales de mediana escala (aforos de 500 a 2.500 espectadores) en el AMBA, con el fin de solventar el 100% de los costos operativos mensuales para diciembre de 2028.',
+        'Esto resulta alcanzable gracias a que apuntaremos a un nicho validado (existen 88 recintos de este tipo en el área), logrando abastecer con nuestro equipamiento 2 recintos de 2.500 espectadores al mismo tiempo. Teniendo en cuenta esto, estaríamos trabajando con los 2 recintos más prestigiosos del mercado objetivo en simultáneo (Teatro Colón y CCK).',
+        'Será relevante al confirmar que el cliente corporativo prefiere tercerizar el servicio como un gasto operativo en lugar de afrontar los altos costos de comprar la tecnología, lo cual garantiza la penetración en el mercado y la sostenibilidad económica de la empresa.',
+      ],
     },
     {
-      date: 'Dic 2028',
-      title: 'Primeros contratos',
-      text: 'Establecer contrato con el 20% del mercado objetivo',
-    },
-    {
+      term: 'Largo plazo',
       date: '2032',
-      title: 'Presencia en el circuito',
-      text: 'En el 40% de los teatros del programa “Sin Barreras” y en el 20% de los eventos de AMBA.',
+      title: 'El estándar en accesibilidad acústica del AMBA',
+      paragraphs: [
+        'Posicionarnos como el servicio estándar en accesibilidad acústica en el AMBA, logrando presencia en un 35% del circuito de teatros de mediana escala (aproximadamente 30 recintos) y expandiendo nuestra flota a 1.000 unidades operativas para el 2032, lo que nos habilitará finalmente para abastecer al mercado de estadios y festivales masivos.',
+        'Esto será alcanzable ya que consideramos que cinco años es un horizonte de trabajo prudencial para transicionar hacia una cadena de manufactura local tercerizada a mayor escala.',
+        'Será relevante porque, al contar con la tracción financiera y el prestigio institucional logrados previamente en el circuito teatral, tendremos la consolidación necesaria para derribar las altas barreras de entrada del oligopolio masivo, cumpliendo nuestra visión de expansión.',
+      ],
     },
   ],
 } as const
@@ -366,7 +402,7 @@ export const identity = {
 
 export const team = {
   eyebrow: 'Equipo',
-  title: 'Quiénes lo hacemos',
+  title: 'Quiénes somos',
   lead: 'Sensonoro es un proyecto de Ingeniería de Sonido de la UNTREF (Universidad Nacional de Tres de Febrero).',
   members: [
     {
@@ -406,15 +442,15 @@ export const team = {
 
 export const contact = {
   eyebrow: 'Contacto',
-  title: 'Llevemos Sensonoro a tu evento',
+  title: 'Llevemos Sensonoro a tu sala',
   lead: 'Contanos qué estás organizando. Te respondemos con una propuesta a medida.',
   mailLabel: 'Escribinos por correo',
   mailSubject: 'Quiero contratar Sensonoro para mi evento',
   eventTypes: [
-    'Recital o festival',
     'Teatro',
+    'Centro cultural',
     'Recinto o sala',
-    'Productora',
+    'Recital o festival',
     'Otro',
   ],
   placeholderIdMessage:
