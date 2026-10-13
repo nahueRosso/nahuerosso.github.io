@@ -48,8 +48,7 @@ export const ctaLabel = 'Contactanos'
 
 export const hero = {
   eyebrow: 'Chalecos hápticos para espectáculos en vivo',
-  titleLine1: 'Sentí la música en vivo.',
-  titleLine2: 'Que nadie se quede afuera.',
+  title: 'Sentí la música en vivo.',
   subtitle:
     'Nuestros chalecos hápticos traducen el sonido del espectáculo en vibraciones sobre el cuerpo. Así, las personas sordas e hipoacúsicas también viven la música en la sala.',
   primaryCta: ctaLabel,
@@ -82,7 +81,7 @@ export const problem = {
     {
       icon: HeartHandshake,
       title: 'Intérpretes de lengua de señas',
-      text: 'Hacen accesibles la palabra y la letra. El chaleco suma la vibración de la música.',
+      text: 'Hacen accesibles la palabra y la letra. El chaleco implementa la riqueza dinámica de la obra.',
     },
   ],
 } as const
@@ -112,7 +111,7 @@ export const howItWorks = {
     {
       icon: Vibrate,
       title: 'El cuerpo siente la música',
-      text: '6 motores hápticos (ERM y LRA) vibran sobre el torso: 4 adelante y 2 atrás. Latencia objetivo ≤ 15 ms.',
+      text: '6 motores hápticos ERM vibran sobre el torso: 4 adelante y 2 atrás. Latencia objetivo ≤ 15 ms.',
     },
   ],
 } as const
@@ -137,7 +136,7 @@ export interface Motor {
 }
 
 export const vestDiagram = {
-  title: 'Explorá el chaleco',
+  title: 'Dónde actúa el chaleco',
   lead: 'Pasá el mouse, tocá o enfocá con el teclado cada zona para ver qué parte del cuerpo vibra.',
   frontLabel: 'Vista frontal',
   backLabel: 'Vista trasera',
@@ -213,17 +212,12 @@ export const audience = {
       icon: Building2,
       tag: 'Cliente',
       title: 'Recintos y espacios culturales de mediana escala',
-      paragraphs: [
-        'En nuestro modelo de negocios, el cliente objetivo está conformado por los administradores y directores de recintos y espacios culturales de mediana escala. Este grupo corporativo e institucional pertenece al sector de las industrias culturales del Área Metropolitana de Buenos Aires (AMBA), abarcando modelos de gestión tanto privada como estatal.',
-        'A nivel cuantitativo, este nicho específico agrupa a un total de 88 recintos identificados en CABA que cuentan con una capacidad operativa idónea para nuestra flota inicial, oscilando entre los 500 y 2.500 espectadores (según el padrón de espacios culturales del GCBA).',
-        'El perfil general de este cliente se define por un fuerte compromiso con la responsabilidad social, la innovación y la búsqueda de nuevos públicos, buscando integrar la vanguardia tecnológica y la accesibilidad a su oferta cultural sin incurrir en altos riesgos de inversión inicial.',
-      ],
     },
     {
       icon: UserCheck,
       tag: 'Usuarios',
       title: 'Personas con hipoacusia leve hasta sordera profunda',
-      paragraphs: ['El chaleco se adapta a cada forma de escuchar.'],
+      text: 'El chaleco se adapta a cada forma de escuchar.',
       points: [
         'Para quienes usan audífonos o implantes, es un complemento.',
         'Para la sordera profunda, es la interfaz sensorial principal.',
@@ -346,7 +340,6 @@ export const roadmap = {
       title: 'MVP y lote piloto de 50 chalecos',
       paragraphs: [
         'Desarrollar un Producto Mínimo Viable (MVP) funcional con una latencia de transmisión igual o menor a 15 ms para enero de 2027. Para julio de ese mismo año, se pretende fabricar un lote piloto de 50 chalecos para ejecutar pruebas Beta en dos recintos culturales del AMBA, donde se realizará una encuesta a los usuarios buscando una satisfacción de la experiencia mayor al 85%.',
-        'Esto será medible y alcanzable ya que contamos con los conocimientos en procesamiento digital de señales (DSP) y porque el lote de 50 unidades responde a la lógica comercial realista de cubrir el cupo de inclusión del 5% en un teatro estándar de 1.000 espectadores.',
         'Será relevante ya que no podemos brindar un servicio definitivo sin validar empíricamente el hardware en un entorno de sala real antes de inyectar capital en una producción industrial a mayor escala.',
       ],
     },
@@ -356,7 +349,6 @@ export const roadmap = {
       title: '250 chalecos y 10 recintos con contrato',
       paragraphs: [
         'Alcanzar nuestra capacidad productiva inicial de 250 chalecos operativos y afianzar vínculos para concretar contratos recurrentes con al menos 10 teatros y centros culturales de mediana escala (aforos de 500 a 2.500 espectadores) en el AMBA, con el fin de solventar el 100% de los costos operativos mensuales para diciembre de 2028.',
-        'Esto resulta alcanzable gracias a que apuntaremos a un nicho validado (existen 88 recintos de este tipo en el área), logrando abastecer con nuestro equipamiento 2 recintos de 2.500 espectadores al mismo tiempo. Teniendo en cuenta esto, estaríamos trabajando con los 2 recintos más prestigiosos del mercado objetivo en simultáneo (Teatro Colón y CCK).',
         'Será relevante al confirmar que el cliente corporativo prefiere tercerizar el servicio como un gasto operativo en lugar de afrontar los altos costos de comprar la tecnología, lo cual garantiza la penetración en el mercado y la sostenibilidad económica de la empresa.',
       ],
     },
@@ -366,7 +358,6 @@ export const roadmap = {
       title: 'El estándar en accesibilidad acústica del AMBA',
       paragraphs: [
         'Posicionarnos como el servicio estándar en accesibilidad acústica en el AMBA, logrando presencia en un 35% del circuito de teatros de mediana escala (aproximadamente 30 recintos) y expandiendo nuestra flota a 1.000 unidades operativas para el 2032, lo que nos habilitará finalmente para abastecer al mercado de estadios y festivales masivos.',
-        'Esto será alcanzable ya que consideramos que cinco años es un horizonte de trabajo prudencial para transicionar hacia una cadena de manufactura local tercerizada a mayor escala.',
         'Será relevante porque, al contar con la tracción financiera y el prestigio institucional logrados previamente en el circuito teatral, tendremos la consolidación necesaria para derribar las altas barreras de entrada del oligopolio masivo, cumpliendo nuestra visión de expansión.',
       ],
     },
@@ -403,7 +394,6 @@ export const identity = {
 export const team = {
   eyebrow: 'Equipo',
   title: 'Quiénes somos',
-  lead: 'Sensonoro es un proyecto de Ingeniería de Sonido de la UNTREF (Universidad Nacional de Tres de Febrero).',
   members: [
     {
       name: 'Dulcinea Bonet',
@@ -463,6 +453,4 @@ export const contact = {
 
 export const footer = {
   tagline: 'Chalecos hápticos para sentir la música en vivo.',
-  university:
-    'Proyecto de Ingeniería de Sonido, Universidad Nacional de Tres de Febrero (UNTREF).',
 }

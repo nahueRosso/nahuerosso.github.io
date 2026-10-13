@@ -21,8 +21,7 @@ export function Hero() {
           className="rise mt-4 text-5xl leading-[1.05] font-black sm:text-6xl xl:text-7xl"
           style={delay(0.08)}
         >
-          {hero.titleLine1}
-          <span className="block text-brand-soft">{hero.titleLine2}</span>
+          {hero.title}
         </h1>
         <p
           className="rise mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl"

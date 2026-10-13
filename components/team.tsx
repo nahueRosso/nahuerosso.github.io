@@ -9,7 +9,6 @@ export function Team() {
         id="equipo-titulo"
         eyebrow={team.eyebrow}
         title={team.title}
-        lead={team.lead}
       />
 
       <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
