@@ -340,7 +340,6 @@ export const roadmap = {
       title: 'MVP y lote piloto de 50 chalecos',
       paragraphs: [
         'Desarrollar un Producto Mínimo Viable (MVP) funcional con una latencia de transmisión igual o menor a 15 ms para enero de 2027. Para julio de ese mismo año, se pretende fabricar un lote piloto de 50 chalecos para ejecutar pruebas Beta en dos recintos culturales del AMBA, donde se realizará una encuesta a los usuarios buscando una satisfacción de la experiencia mayor al 85%.',
-        'Será relevante ya que no podemos brindar un servicio definitivo sin validar empíricamente el hardware en un entorno de sala real antes de inyectar capital en una producción industrial a mayor escala.',
       ],
     },
     {
@@ -349,7 +348,6 @@ export const roadmap = {
       title: '250 chalecos y 10 recintos con contrato',
       paragraphs: [
         'Alcanzar nuestra capacidad productiva inicial de 250 chalecos operativos y afianzar vínculos para concretar contratos recurrentes con al menos 10 teatros y centros culturales de mediana escala (aforos de 500 a 2.500 espectadores) en el AMBA, con el fin de solventar el 100% de los costos operativos mensuales para diciembre de 2028.',
-        'Será relevante al confirmar que el cliente corporativo prefiere tercerizar el servicio como un gasto operativo en lugar de afrontar los altos costos de comprar la tecnología, lo cual garantiza la penetración en el mercado y la sostenibilidad económica de la empresa.',
       ],
     },
     {
@@ -358,7 +356,6 @@ export const roadmap = {
       title: 'El estándar en accesibilidad acústica del AMBA',
       paragraphs: [
         'Posicionarnos como el servicio estándar en accesibilidad acústica en el AMBA, logrando presencia en un 35% del circuito de teatros de mediana escala (aproximadamente 30 recintos) y expandiendo nuestra flota a 1.000 unidades operativas para el 2032, lo que nos habilitará finalmente para abastecer al mercado de estadios y festivales masivos.',
-        'Será relevante porque, al contar con la tracción financiera y el prestigio institucional logrados previamente en el circuito teatral, tendremos la consolidación necesaria para derribar las altas barreras de entrada del oligopolio masivo, cumpliendo nuestra visión de expansión.',
       ],
     },
   ],
