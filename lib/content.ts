@@ -344,18 +344,18 @@ export const roadmap = {
     },
     {
       term: 'Mediano plazo',
-      date: '2028',
+      date: '2029',
       title: '250 chalecos y 10 recintos con contrato',
       paragraphs: [
-        'Alcanzar nuestra capacidad productiva inicial de 250 chalecos operativos y afianzar vínculos para concretar contratos recurrentes con al menos 10 teatros y centros culturales de mediana escala (aforos de 500 a 2.500 espectadores) en el AMBA, con el fin de solventar el 100% de los costos operativos mensuales para diciembre de 2028.',
+        'Alcanzar nuestra capacidad productiva inicial de 250 chalecos operativos y afianzar vínculos para concretar contratos recurrentes con al menos 10 teatros y centros culturales de mediana escala (aforos de 500 a 2.500 espectadores) en el AMBA, con el fin de solventar el 100% de los costos operativos mensuales para diciembre de 2029.',
       ],
     },
     {
       term: 'Largo plazo',
-      date: '2032',
+      date: '2035',
       title: 'El estándar en accesibilidad acústica del AMBA',
       paragraphs: [
-        'Posicionarnos como el servicio estándar en accesibilidad acústica en el AMBA, logrando presencia en un 35% del circuito de teatros de mediana escala (aproximadamente 30 recintos) y expandiendo nuestra flota a 1.000 unidades operativas para el 2032, lo que nos habilitará finalmente para abastecer al mercado de estadios y festivales masivos.',
+        'Posicionarnos como el servicio estándar en accesibilidad acústica en el AMBA, logrando presencia en un 35% del circuito de teatros de mediana escala (aproximadamente 30 recintos) y expandiendo nuestra flota a 1.000 unidades operativas para el 2035, lo que nos habilitará finalmente para abastecer al mercado de estadios y festivales masivos.',
       ],
     },
   ],
